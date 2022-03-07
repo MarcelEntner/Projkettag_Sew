@@ -13,13 +13,15 @@
 
 <body>
     @section('header')
- 
+    <!--Hier den Header erstellen -->
+    
 
     @show
 
 
 
     @section('content')
+    <!--Hier nichts erstellen -->
 
 
     @show
@@ -28,7 +30,7 @@
 
     @section('footer')
 
-
+    <!--Hier den Footer erstellen -->
         
 
     @show
