@@ -20,7 +20,7 @@ Route::get('/CreatePostPage', function () {
     return view('CreatePostPage');
 });
 Route::get('/LandingPage', function () {
-    return view('Landingpage');
+    return view('LandingPage');
 });
 Route::get('/RegisterPage', function () {
     return view('Registerpage');
