@@ -17,3 +17,20 @@ body {
 #login .container #login-row #login-column #login-box #login-form #register-link {
     margin-top: -85px;
 }
+
+.thumbnail {
+    position: relative;
+}
+.thumbnail img {
+    width: 100%;
+}
+.txtDiv {
+    position: absolute;
+    left: 15px;
+    top: 0px;
+    background: rgba(255,0,0,0.5);
+    color: #fff;
+}
+body{
+    margin: 0px;
+}

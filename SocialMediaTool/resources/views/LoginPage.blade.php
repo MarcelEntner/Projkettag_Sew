@@ -3,9 +3,14 @@
 @section('header')
     @stop
 @section('content')
-    <center>
-    <h1 style="margin-top: 5%; margin-bottom: 5%">Social Media Tool</h1>
-    </center>
+
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <img src="../../public/images/LogoHAKHASITHTL_gradient.svg" alt="SZ-YBBS Logo">
+        </div>
+    </div>
+
+    <h1 class="text-center" style="margin-top: 10%">Social Media Tool</h1>
 
     <div id="login">
         <div class="container">
