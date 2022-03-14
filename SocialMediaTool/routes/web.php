@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('LoginPage');
+    return view('auth/login');
 });
 Route::get('/CreatePostPage', function () {
     return view('CreatePostPage');
