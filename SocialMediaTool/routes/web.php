@@ -25,3 +25,7 @@ Route::get('/LandingPage', function () {
 Route::get('/RegisterPage', function () {
     return view('Registerpage');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
