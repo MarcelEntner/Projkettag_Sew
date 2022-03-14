@@ -6,7 +6,7 @@
 
     <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
-            <img src="../../public/images/LogoHAKHASITHTL_gradient.svg" alt="SZ-YBBS Logo">
+            <img src="../storage/images/LogoHAKHASITHTL_gradient.svg" alt="SZ-YBBS Logo">
         </div>
     </div>
 
