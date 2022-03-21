@@ -3,45 +3,42 @@
 <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
       <div class="col">
         <div class="card mb-4 rounded-3 shadow-sm border-primary">
-          <div class="card-header py-3 text-white bg-primary border-primary">
-            <h4 class="my-0 fw-normal">Youtube</h4>
-          </div>
           <div class="card-body">
             <img style="width: 10vw; heigth: 10vh" src="../storage/images/youtube.png">
+            <h4 class="my-0 fw-normal">Youtube</h4>
           </div>
         </div>
       </div>
+
+
       <div class="col">
         <div class="card mb-4 rounded-3 shadow-sm border-primary">
-          <div class="card-header py-3 text-white bg-primary border-primary">
-            <h4 class="my-0 fw-normal">Instagram</h4>
-          </div>
           <div class="card-body">
             <img style="width: 10vw; heigth: 10vh" src="../storage/images/instagram.png">
+            <h4 class="my-0 fw-normal">Instagram</h4>
           </div>
         </div>
       </div>
+
       <div class="col">
         <div class="card mb-4 rounded-3 shadow-sm border-primary">
-          <div class="card-header py-3 text-white bg-primary border-primary">
-            <h4 class="my-0 fw-normal">Twitter</h4>
-          </div>
           <div class="card-body">
             <img style="width: 10vw; heigth: 10vh" src="../storage/images/twitter.png">
+            <h4 class="my-0 fw-normal">Twitter</h4>
           </div>
         </div>
       </div>
+
       <div class="col">
         <div class="card mb-4 rounded-3 shadow-sm border-primary">
-          <div class="card-header py-3 text-white bg-primary border-primary">
-            <h4 class="my-0 fw-normal">Facebook</h4>
-          </div>
           <div class="card-body">
             <img style="width: 10vw; heigth: 10vh" src="../storage/images/facebook.png">
+            <h4 class="my-0 fw-normal">Facebook</h4>
           </div>
         </div>
       </div>
     </div>
+    
 <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
     <p class="col-md-4 mb-0 text-muted">© 2022 Social Media Tool</p>
 
