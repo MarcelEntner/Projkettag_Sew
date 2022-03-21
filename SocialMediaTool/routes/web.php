@@ -16,9 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('auth/login');
 });
-Route::get('/main', function(){
-    return view('mainpage');
-});
+Route::get('/main', [App\Http\Controllers\MainPageController::class, 'index'])->name('main');
 Route::get('/post', function(){
     return view('Post');
 });
