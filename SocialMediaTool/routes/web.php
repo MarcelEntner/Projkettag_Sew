@@ -16,14 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('auth/login');
 });
-Route::get('/CreatePostPage', function () {
-    return view('CreatePostPage');
+Route::get('/main', function(){
+    return view('mainpage');
 });
-Route::get('/LandingPage', function () {
-    return view('LandingPage');
-});
-Route::get('/RegisterPage', function () {
-    return view('Registerpage');
+Route::get('/post', function(){
+    return view('Post');
 });
 
 Auth::routes();
