@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BeitragController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,3 +25,4 @@ Route::get('/post', function(){
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('Beitrag', BeitragController::class);

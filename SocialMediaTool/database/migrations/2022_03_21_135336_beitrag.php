@@ -17,14 +17,15 @@ class Beitrag extends Migration
             $table->string('Foto')->nullable();
             $table->string('Video')->nullable();
             $table->string('Titel')->nullable();
-            $table->string('Beschreibung');
+            $table->string('Beschreibung')->nullable();
             $table->string('Ort')->nullable();
             $table->string('Zielgruppe')->nullable();
             $table->String('Interaktion')->nullable();
             $table->boolean('ZurPlaylisthinzufügen')->nullable();
-            $table->dateTime('ErstellDatum');
+            $table->dateTime('ErstellDatum')->nullable();
+            $table->dateTime('ErstellUhrzeit')->nullable();
             $table->dateTime('LöschDatum')->nullable();
-            $table->timestamp('created_at')->nullable();
+            $table->timestamps();
         });
     }
 
