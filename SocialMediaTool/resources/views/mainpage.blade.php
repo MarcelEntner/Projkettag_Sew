@@ -49,8 +49,8 @@
 
 
 
-<div id="YoutubeBeitraege" style="visibility: hidden;">
-<h3> Die letzten Youtube Beiträge </h>
+<div id="YoutubeBeitraege" style="visibility : hidden;  height:600px">
+<h1 style="text-align:center;"> Die letzten Youtube Beiträge </h1>
 <br>
 <?php 
 
@@ -61,21 +61,27 @@ $AlleBeitraegeYoutube = DB::select('select * from beitrag where Youtube = "1"  a
 
 
     @foreach($AlleBeitraegeYoutube as $Beitrag)
-    <img style="width: 10%; height:20%" 
+    <div class="card" style="width: 30%; height:100% ;">
+     <img style="width: 50%; height:50%; margin:auto;" 
     <?php 
      $url =  Storage::url($Beitrag->Foto);
 
      echo 'src="' . $url .'"';
      
-     ?> 
-     >
+     ?> >
+      <div class="container">
+      <h4 style="text-align:center;"><b><?php echo $Beitrag->Titel; ?></b></h4>
+      <p style="text-align:center;"><?php echo $Beitrag->Beschreibung; ?></p>
+      </div>
+    </div>
     @endforeach
 
 </div>
 
 
-<div id="FacebookBeitraege" style="visibility: hidden;">
-<h3> Die letzten Facebook Beiträge </h>
+<div id="FacebookBeitraege" style="height:600px; margin-top:-600px; visibility : hidden; ">
+<h1 style="text-align:center;"> Die letzten Facebook Beiträge </h1>
+
 <br>
 <?php 
 
@@ -85,21 +91,26 @@ $AlleBeitraegeFaceBook = DB::select('select * from beitrag where Facebook = "1" 
 
 
     @foreach($AlleBeitraegeFaceBook as $Beitrag)
-    <img style="width: 10%; height:20%" 
+    <div class="card" style="width: 30%; height:100% ;">
+     <img style="width: 50%; height:50%; margin:auto;" 
     <?php 
      $url =  Storage::url($Beitrag->Foto);
 
      echo 'src="' . $url .'"';
      
-     ?> 
-     >
+     ?> >
+      <div class="container">
+      <h4 style="text-align:center;"><b><?php echo $Beitrag->Titel; ?></b></h4>
+      <p style="text-align:center;"><?php echo $Beitrag->Beschreibung; ?></p>
+      </div>
+    </div>
     @endforeach
 
 </div>
 
 
-<div id="InstagramBeitraege" style="visibility: hidden;">
-<h3> Die letzten Instagram Beiträge </h>
+<div id="InstagramBeitraege" style="height:600px; margin-top:-600px;visibility : hidden; ">
+<h1 style="text-align:center;"> Die letzten Instagram Beiträge </h1>
 <br>
 <?php 
 
@@ -110,22 +121,27 @@ $AlleBeitraegeInstagram = DB::select('select * from beitrag where Instagram = "1
 
 
     @foreach($AlleBeitraegeInstagram as $Beitrag)
-    <img style="width: 10%; height:20%" 
+    <div class="card" style="width: 30%; height:100%;">
+     <img style="width: 50%; height:50%; margin:auto;" 
     <?php 
      $url =  Storage::url($Beitrag->Foto);
 
      echo 'src="' . $url .'"';
      
-     ?> 
-     >
+     ?> >
+      <div class="container">
+      <h4 style="text-align:center;"><b><?php echo $Beitrag->Titel; ?></b></h4>
+      <p style="text-align:center;"><?php echo $Beitrag->Beschreibung; ?></p>
+      </div>
+    </div>
     @endforeach
 
 </div>
 
 
 
-<div id="TwitterBeitraege" style="visibility: hidden;">
-<h3> Die letzten Twitter Beiträge </h>
+<div id="TwitterBeitraege" style=" height:600px;visibility : hidden; margin-top: -600px; " >
+<h1 style="text-align:center;"> Die letzten Twitter Beiträge </h1>
 <br>
 <?php 
 
@@ -136,14 +152,19 @@ $AlleBeitraegeTwitter = DB::select('select * from beitrag where Twitter = "1" an
 
 
     @foreach($AlleBeitraegeTwitter as $Beitrag)
-    <img style="width: 10%; height:20%" 
+    <div class="card" style="width: 30%; height:100% ;">
+     <img style="width: 50%; height:50%; margin:auto;" 
     <?php 
      $url =  Storage::url($Beitrag->Foto);
 
      echo 'src="' . $url .'"';
      
-     ?> 
-     >
+     ?> >
+      <div class="container">
+      <h4 style="text-align:center;"><b><?php echo $Beitrag->Titel; ?></b></h4>
+      <p style="text-align:center;"><?php echo $Beitrag->Beschreibung; ?></p>
+      </div>
+    </div>
     @endforeach
 
 </div>
@@ -258,54 +279,52 @@ $AlleBeitraegeTwitter = DB::select('select * from beitrag where Twitter = "1" an
       <li class="nav-item"><a href="{{ route('main') }}" class="nav-link px-2 text-muted">Platform-login</a></li>
     </ul>
   </footer>
-
+ 
 
   <script>
     function BeitragHinzufügen(){
       $('#BeitragHinzufügen').modal('show');
      
     }
+    function delay(time) {
+  return new Promise(resolve => setTimeout(resolve, time));
+}
 
 
 
-
-    function ShowYoutubeBeitrage(){
-      alert("YT");
-      
+ async function ShowYoutubeBeitrage(){      
       document.getElementById("TwitterBeitraege").style.visibility = "hidden";
       document.getElementById("FacebookBeitraege").style.visibility = "hidden";
       document.getElementById("InstagramBeitraege").style.visibility = "hidden";
+      await delay(150);
       document.getElementById("YoutubeBeitraege").style.visibility = "visible";
 
 
     }
 
-    function ShowTwitterBeitrage(){
-      alert("TW");
-
+  async  function ShowTwitterBeitrage(){
       document.getElementById("YoutubeBeitraege").style.visibility = "hidden";
-     
       document.getElementById("FacebookBeitraege").style.visibility = "hidden";
-      document.getElementById("InstagramBeitraege").style.visibility = "hidden";   
+      document.getElementById("InstagramBeitraege").style.visibility = "hidden"; 
+      await delay(150);  
       document.getElementById("TwitterBeitraege").style.visibility = "visible"; 
     }
 
-    function ShowInstagramBeitrage(){
-      alert("Inst");
-     
+   async function ShowInstagramBeitrage(){  
       document.getElementById("YoutubeBeitraege").style.visibility = "hidden";
       document.getElementById("TwitterBeitraege").style.visibility = "hidden";
       document.getElementById("FacebookBeitraege").style.visibility = "hidden";
+      await delay(150);
+      
       document.getElementById("InstagramBeitraege").style.visibility = "visible"; 
            
     }
 
-    function ShowFacebookBeitrage(){
-      alert("FB");
-
+    async function ShowFacebookBeitrage(){
       document.getElementById("YoutubeBeitraege").style.visibility = "hidden";
       document.getElementById("TwitterBeitraege").style.visibility = "hidden";
-      document.getElementById("InstagramBeitraege").style.visibility = "hidden";   
+      document.getElementById("InstagramBeitraege").style.visibility = "hidden";  
+      await delay(150); 
       document.getElementById("FacebookBeitraege").style.visibility = "visible"; 
     }
   </script>
