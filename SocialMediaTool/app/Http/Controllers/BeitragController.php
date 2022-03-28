@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use App\Models\Beitrag;
 use Illuminate\Http\Request;
+use SebastianBergmann\Environment\Console;
 
 class BeitragController extends Controller
 {
@@ -37,9 +38,67 @@ class BeitragController extends Controller
     {
         $Beitrag = new Beitrag();
 
-        $Beitrag->Titel = $request->Eingabe3;
+       // $Beitrag->Foto = $request->;
+       // $Beitrag->Video = $request->;
+        $Beitrag->Titel = $request->Title;
+        $Beitrag->Beschreibung = $request->Beschreibung;
+        $Beitrag->Ort = $request->Ort;
+        $Beitrag->Zielgruppe = $request->Zielgruppe;
+        $Beitrag->Interaktion = $request->Interaktion;
+        $Beitrag->ZurPlaylisthinzufügen = $request->Playlist;
+        $Beitrag->ErstellDatum = $request->ErstellDatum;
+        $Beitrag->ErstellZeit = $request->ErstellZeit;
+        $Beitrag->LöschDatum = $request->LöschDatum;
+
+        if($request->FacebookCheck == 'on')
+        {
+            $Beitrag->Facebook = true;
+        } else  {
+            $Beitrag->Facebook = false;
+        }
+        
+        if($request->YoutubeCheck == 'on')
+        {
+            $Beitrag->Youtube = true;
+        } else  {
+            $Beitrag->Youtube = false;
+        }
+        
+    
+        if($request->InstagramCheck == 'on')
+        {
+            $Beitrag->Instagram = true;
+        } else  {
+            $Beitrag->Instagram = false;
+        }
+
+
+        if($request->TwitterCheck == 'on')
+        {
+            $Beitrag->Twitter = true;
+        } else  {
+            $Beitrag->Twitter = false;
+        }
+        
+      
+            if ($request->file("Foto")) {
+
+                //direkt als BLOB in die Datenbank speichern
+                // $image = base64_encode(file_get_contents($request->file('Foto')));
+                // $Beitrag->Foto = $image;
+     
+               
+     
+                $path = $request->file('Foto')->store('public');
+                $Beitrag->Foto = $path; 
+             }
+ 
 
         $Beitrag->save();
+
+        $AlleBeitraege = DB::table('beitrag')->get();
+
+        return redirect("/main")->with(['AlleBeitraege' => $AlleBeitraege]);
 
     }
 
