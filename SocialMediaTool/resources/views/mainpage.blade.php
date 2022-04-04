@@ -274,7 +274,6 @@ $AlleBeitraegeTwitter = DB::select('select * from beitrag where Twitter = "1" an
 
     <ul class="nav col-md-4 justify-content-end">
       <li class="nav-item"><a href="{{ route('main') }}" class="nav-link px-2 text-muted">Home</a></li>
-      <li class="nav-item"><a href="{{ route('main') }}" class="nav-link px-2 text-muted">CreatePost</a></li>
       <li class="nav-item"><a href="{{ route('getlogindata') }}" class="nav-link px-2 text-muted">Platform-login</a></li>
     </ul>
   </footer>
