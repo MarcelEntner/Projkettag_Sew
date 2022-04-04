@@ -23,6 +23,7 @@ Route::get('/post', function(){
 });
 
 Auth::routes();
+Route::redirect('/register', '/');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('Beitrag', BeitragController::class);

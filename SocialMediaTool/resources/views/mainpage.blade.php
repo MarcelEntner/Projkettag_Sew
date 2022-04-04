@@ -7,7 +7,7 @@
            <a href="javascript:ShowYoutubeBeitrage()"> 
              <img style="width: 10vw; heigth: 10vh" src="../storage/images/youtube.png">
           </a>
-            <h4 class="my-0 fw-normal">Youtube</h4>
+            <h1 class="my-0 fw-normal">Youtube</h1>
           </div>
         </div>
       </div>
@@ -19,7 +19,7 @@
           <a href="javascript:ShowInstagramBeitrage()"> 
             <img style="width: 10vw; heigth: 10vh" src="../storage/images/instagram.png">
           </a>
-            <h4 class="my-0 fw-normal">Instagram</h4>
+            <h1 class="my-0 fw-normal">Instagram</h1>
           </div>
         </div>
       </div>
@@ -30,7 +30,7 @@
           <a href="javascript:ShowTwitterBeitrage()"> 
             <img style="width: 10vw; heigth: 10vh" src="../storage/images/twitter.png">
         </a>
-            <h4 class="my-0 fw-normal">Twitter</h4>
+            <h1 class="my-0 fw-normal">Twitter</h1>
           </div>
         </div>
       </div>
@@ -41,7 +41,7 @@
           <a href="javascript:ShowFacebookBeitrage()"> 
             <img style="width: 10vw; heigth: 10vh" src="../storage/images/facebook.png">
           </a>
-            <h4 class="my-0 fw-normal">Facebook</h4>
+            <h1 class="my-0 fw-normal">Facebook</h1>
           </div>
         </div>
       </div>
