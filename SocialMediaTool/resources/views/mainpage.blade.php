@@ -49,7 +49,7 @@
 
 
 
-<div id="YoutubeBeitraege" style="visibility : hidden;  height:600px">
+<div id="YoutubeBeitraege" class="Beitraege-Container">
 <h1 style="text-align:center;"> Die letzten Youtube Beiträge </h1>
 <br>
 <?php 
@@ -79,7 +79,7 @@ $AlleBeitraegeYoutube = DB::select('select * from beitrag where Youtube = "1"  a
 </div>
 
 
-<div id="FacebookBeitraege" style="height:600px; margin-top:-600px; visibility : hidden; ">
+<div id="FacebookBeitraege" class="Beitraege-Container">
 <h1 style="text-align:center;"> Die letzten Facebook Beiträge </h1>
 
 <br>
@@ -109,7 +109,7 @@ $AlleBeitraegeFaceBook = DB::select('select * from beitrag where Facebook = "1" 
 </div>
 
 
-<div id="InstagramBeitraege" style="height:600px; margin-top:-600px;visibility : hidden; ">
+<div id="InstagramBeitraege" class="Beitraege-Container">
 <h1 style="text-align:center;"> Die letzten Instagram Beiträge </h1>
 <br>
 <?php 
@@ -140,7 +140,7 @@ $AlleBeitraegeInstagram = DB::select('select * from beitrag where Instagram = "1
 
 
 
-<div id="TwitterBeitraege" style=" height:600px;visibility : hidden; margin-top: -600px; " >
+<div id="TwitterBeitraege" class="Beitraege-Container">
 <h1 style="text-align:center;"> Die letzten Twitter Beiträge </h1>
 <br>
 <?php 
@@ -168,110 +168,62 @@ $AlleBeitraegeTwitter = DB::select('select * from beitrag where Twitter = "1" an
     @endforeach
 
 </div>
+<div class="modal" id="BeitragHinzufügen" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+    </div>
+    <div class="modal-body">
+      <form action="{{ route('Beitrag.store') }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        <span> Foto
+        <input type="file" id="Foto" name="Foto"> 
+        </span> <br>
+        <span> Video
+        <input type="file"  id="Video" name="Video">
+        </span><br>
+        <span> Title
+        <input type="text" id="Title" name="Title">
+        </span><br>
+        <span> Beschreibung
+        <input type="text" id="Beschreibung" name="Beschreibung">
+        </span><br>
+        <span> Ort
+        <input type="text" id="Ort" name="Ort">
+        </span><br>
+        <span> Zielgruppe
+        <input type="text" id="Zielgruppe" name="Zielgruppe">
+        </span><br>
+        <span> Interaktionen erlauben
+        <input type="text" id="Interaktion" name="Interaktion">
+        </span><br>
+        <span> Zur Playlist hinzufügen:
+        <input type="text" id="Playlist" name="Playlist">
+        </span><br>
+        <span> Erstell Datum
+        <input type="date" id="ErstellDatum" name="ErstellDatum">
+        </span><br>
+        <span> Erstell Zeit
+        <input type="time" id="ErstellZeit" name="ErstellZeit">
+        </span><br>
+        <span> Lösch Datum
+        <input type="date" id="LöschDatum" name="LöschDatum">
+        </span><br>
 
-                      
+        <input type="checkbox" name="FacebookCheck" id="Facebook"> Facebook</input>
+        <input type="checkbox" name="InstagramCheck" id="Instagram"> Instagram</input>
+        <input type="checkbox" name="TwitterCheck" id="Twitter"> Twitter</input>
+        <input type="checkbox" name="YoutubeCheck" id="Youtube"> Youtube</input>
 
-    <div class="modal" id="BeitragHinzufügen" tabindex="-1" role="dialog"
-                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-
-                      
-                        </div>
-                        <div class="modal-body">
-                            <form action="{{ route('Beitrag.store') }}" method="POST" enctype="multipart/form-data">
-                                @csrf
-                                <span> Foto
-                                <input type="file" id="Foto" name="Foto"> 
-                                </span> <br>
-                                <span> Video
-                                <input type="file"  id="Video" name="Video">
-                                </span><br>
-                                <span> Title
-                                <input type="text" id="Title" name="Title">
-                                </span><br>
-                                <span> Beschreibung
-                                <input type="text" id="Beschreibung" name="Beschreibung">
-                                </span><br>
-                                <span> Ort
-                                <input type="text" id="Ort" name="Ort">
-                                </span><br>
-                                <span> Zielgruppe
-                                <input type="text" id="Zielgruppe" name="Zielgruppe">
-                                </span><br>
-                                <span> Interaktionen erlauben
-                                <input type="text" id="Interaktion" name="Interaktion">
-                                </span><br>
-                                <span> Zur Playlist hinzufügen:
-                                <input type="text" id="Playlist" name="Playlist">
-                                </span><br>
-                                <span> Erstell Datum
-                                <input type="date" id="ErstellDatum" name="ErstellDatum">
-                                </span><br>
-                                <span> Erstell Zeit
-                                <input type="time" id="ErstellZeit" name="ErstellZeit">
-                                </span><br>
-                                <span> Lösch Datum
-                                <input type="date" id="LöschDatum" name="LöschDatum">
-                                </span><br>
-
-                                <input type="checkbox" name="FacebookCheck" id="Facebook"> Facebook</input>
-                                <input type="checkbox" name="InstagramCheck" id="Instagram"> Instagram</input>
-                                <input type="checkbox" name="TwitterCheck" id="Twitter"> Twitter</input>
-                                <input type="checkbox" name="YoutubeCheck" id="Youtube"> Youtube</input>
-
-
-                                <input type="submit" class="btn" style="margin-left:30%" id="BeitragErstellen"
-                                    value="BetragErstellen">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <button id="newpost" type="button" class="btn btn-primary" onclick="BeitragHinzufügen();" data-modal="#BeitragHinzufügen">Primary</button>
-    
-
-
-
-
-
-
-<footer id="fbuttom" class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <input type="submit" class="btn" style="margin-left:30%" id="BeitragErstellen" value="BetragErstellen">
+      </form>
+    </div>
+  </div>
+</div>
+<button id="newpost" type="button" class="btn btn-primary" onclick="BeitragHinzufügen();" data-modal="#BeitragHinzufügen">Primary</button>
+<footer id="fbottom" class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
     <p class="col-md-4 mb-0 text-muted">© 2022 Social Media Tool</p>
-
-    <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-    
-    </a>
-
+    <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none"></a>
     <ul class="nav col-md-4 justify-content-end">
       <li class="nav-item"><a href="{{ route('main') }}" class="nav-link px-2 text-muted">Home</a></li>
       <li class="nav-item"><a href="{{ route('getlogindata') }}" class="nav-link px-2 text-muted">Platform-login</a></li>
