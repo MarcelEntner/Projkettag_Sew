@@ -176,9 +176,8 @@ $AlleBeitraegeTwitter = DB::select('select * from beitrag where Twitter = "1" an
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      
                         </div>
                         <div class="modal-body">
                             <form action="{{ route('Beitrag.store') }}" method="POST" enctype="multipart/form-data">
@@ -276,7 +275,7 @@ $AlleBeitraegeTwitter = DB::select('select * from beitrag where Twitter = "1" an
     <ul class="nav col-md-4 justify-content-end">
       <li class="nav-item"><a href="{{ route('main') }}" class="nav-link px-2 text-muted">Home</a></li>
       <li class="nav-item"><a href="{{ route('main') }}" class="nav-link px-2 text-muted">CreatePost</a></li>
-      <li class="nav-item"><a href="{{ route('main') }}" class="nav-link px-2 text-muted">Platform-login</a></li>
+      <li class="nav-item"><a href="{{ route('getlogindata') }}" class="nav-link px-2 text-muted">Platform-login</a></li>
     </ul>
   </footer>
  
