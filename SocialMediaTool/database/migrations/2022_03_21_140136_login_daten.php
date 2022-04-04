@@ -22,6 +22,7 @@ class LoginDaten extends Migration
             $table->string('TW_Passwort')->nullable();
             $table->string('YT_Benutzername')->nullable();
             $table->string('YT_Passwort')->nullable();
+            $table->timestamps();
         });
     }
 

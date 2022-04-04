@@ -25,4 +25,8 @@ class MainPageController extends Controller
     {
         return view('mainpage');
     }
+
+    public function getlogindata(){
+        return view('GetLoginData');
+    }
 }
