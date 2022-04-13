@@ -175,9 +175,10 @@ $AlleBeitraegeTwitter = DB::select('select * from beitrag where Twitter = "1" an
                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-
-                      
+                        <div class="modal-header">
+                        <h4 class="modal-title">Beitrag erstellen</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    
                         </div>
                         <div class="modal-body">
                             <form action="{{ route('Beitrag.store') }}" method="POST" enctype="multipart/form-data">
@@ -220,12 +221,15 @@ $AlleBeitraegeTwitter = DB::select('select * from beitrag where Twitter = "1" an
                                 <input type="checkbox" name="InstagramCheck" id="Instagram"> Instagram</input>
                                 <input type="checkbox" name="TwitterCheck" id="Twitter"> Twitter</input>
                                 <input type="checkbox" name="YoutubeCheck" id="Youtube"> Youtube</input>
-
+                                <br>
 
                                 <input type="submit" class="btn" style="margin-left:30%" id="BeitragErstellen"
                                     value="BetragErstellen">
                             </form>
                         </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                         </div>
                     </div>
                 </div>
             </div>
@@ -235,6 +239,7 @@ $AlleBeitraegeTwitter = DB::select('select * from beitrag where Twitter = "1" an
 
 
 
+<!-- Modal -->
 
 
 
@@ -256,9 +261,10 @@ $AlleBeitraegeTwitter = DB::select('select * from beitrag where Twitter = "1" an
 
 
 
-
-    <button id="newpost" type="button" class="btn btn-primary" onclick="BeitragHinzufügen();" data-modal="#BeitragHinzufügen">Primary</button>
+    <button id="newpost" type="button" class="btn btn-primary" onclick="BeitragHinzufügen();" data-toggle="modal" data-modal="#BeitragHinzufügen">Beitrag erstellen</button>
     
+   
+
 
 
 
