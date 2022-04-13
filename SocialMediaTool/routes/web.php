@@ -27,6 +27,7 @@ Route::get('/post', function(){
 Route::get('/GetLoginData', [App\Http\Controllers\MainPageController::class, 'getlogindata'])->name('getlogindata');
 
 Auth::routes();
+Route::redirect('/register', '/');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('Beitrag', BeitragController::class);
